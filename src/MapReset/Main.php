@@ -12,7 +12,7 @@ public $Command;
 
  
  public function onLoad() { 
-    $this->getLogger()->info(TextFormat::RED . "Loading MapReset");
+   // $this->getLogger()->info(TextFormat::RED . "Loading MapReset"); They would see this message twice if you use onLoad & onEnable.
     $this->Command = new MapResetCommand ( $this );
  }
     public function onEnable(){
@@ -20,6 +20,7 @@ public $Command;
         $this->saveDefaultConfig();
         $map = $this->getConfig();
         $time = $this->getConfig->get("TimeReset"); //Grabs time until reset
+        $this->getConfig()->set("startreset", "no"); //This is to make sure there wont be a map reset on onEnable
         $this->getServer()->getScheduler()->scheduleRepeatingTask(new MapResetCountDown($this), $time); //sechdules a task for the time.
         
         
