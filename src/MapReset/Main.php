@@ -19,6 +19,10 @@ public $Command;
         @mkdir($this->getDataFolder());
         $this->saveDefaultConfig();
         $map = $this->getConfig();
+        $time = $this->getConfig->get("TimeReset"); //Grabs time until reset
+        $this->getServer()->getScheduler()->scheduleRepeatingTask(new MapResetCountDown($this), $time); //sechdules a task for the time.
+        
+        
         # The world will be cloned
         if(!$map->exists("MapReset")){
             $map->set("MapReset", "World1");
