@@ -17,10 +17,14 @@ use pocketmine\scheduler\PluginTask;
 
 class MapResetCountDown extends PluginTask {
 	
-	public function __construct(Main) {
-	}
-
-	public function log($message) {
-		$this->plugin->getLogger ()->info ( $message );
-	}
-}
+	public function __construct(Main $plugin){
+        parent::__construct($plugin);
+        $this->plugin = $plugin;
+		$this->length = -1;
+    }
+    public function onRun($currentTick){
+    	$startreset = $this->owner->getConfig()->get("startreset");
+    	if($startreset === "no"){
+    		$this->owner->getConfig()->set("startreset", "no"); //The reason why Im doing this is to make sure the map wont reset on onEnable()
+    	}
+    }
