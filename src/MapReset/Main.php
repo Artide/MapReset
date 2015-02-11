@@ -6,6 +6,7 @@ use pocketmine\utils\TextFormat;
 use pocketmine\plugin\PluginBase;
 use MapReset\Perms;
 use pocketmine\event\Listener;
+use pocketmine\utils\Config;
 
 class Main extends PluginBase  implements Listener {
  
