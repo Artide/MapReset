@@ -24,7 +24,7 @@ class MapResetCommand {
 				$this->resetCommandMap($sender);
 				foreach($this->getServer()->getLevels->getPlayers() as $p){
 					//tleport playeer to "world tp player"
-					$p->sendMessage("[MapReset] The map is resetting. You have been teleported tp $world");
+					$p->sendMessage("[MapReset] The map is resetting. You have been teleported to $world");
 					return true;
 					break;
 				}
