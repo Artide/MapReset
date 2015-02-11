@@ -3,7 +3,6 @@
 namespace MapReset;
 
 
-use pocketmine\utils\Config;
 use pocketmine\Server;
 use pocketmine\utils\Utils;
 use pocketmine\utils\Config;
