@@ -5,6 +5,7 @@ namespace MapReset;
 use pocketmine\utils\TextFormat;
 use pocketmine\plugin\PluginBase;
 use MapReset\Perms;
+use pocketmine\event\Listener;
 
 class Main extends PluginBase  implements Listener {
  
