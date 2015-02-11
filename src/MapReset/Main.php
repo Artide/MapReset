@@ -17,6 +17,7 @@ public $Command;
  }
     public function onEnable(){
         @mkdir($this->getDataFolder());
+        $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->saveDefaultConfig();
         $map = $this->getConfig();
         $time = $this->getConfig->get("TimeReset"); //Grabs time until reset
