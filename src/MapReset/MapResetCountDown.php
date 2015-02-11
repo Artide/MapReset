@@ -25,6 +25,12 @@ class MapResetCountDown extends PluginTask {
     public function onRun($currentTick){
     	$startreset = $this->owner->getConfig()->get("startreset");
     	if($startreset === "no"){
-    		$this->owner->getConfig()->set("startreset", "no"); //The reason why Im doing this is to make sure the map wont reset on onEnable()
+    		$this->owner->getConfig()->set("startreset", "yes"); //The reason why Im doing this is to make sure the map wont reset on onEnable()
+    	}
+    	elseif($startreser === "yes"){
+    		Server::getInstance()->broadcastMessage("[MapReset] Map reseting in $time minute/s!");
+    	}
+    		
+    		
     	}
     }
