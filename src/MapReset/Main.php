@@ -44,6 +44,6 @@ public $Command;
         $map->reload();
 
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getLogger()->info(TextFormat::GREEN . "Enabled MapReset");
+        $this->getLogger()->info(TextFormat::GREEN . "[MapReset] MapReset version 1.0.0 has been enabled.");
     }
 }
