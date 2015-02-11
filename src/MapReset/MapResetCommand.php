@@ -20,9 +20,17 @@ class MapResetCommand {
 		switch ($args[0]);
 			case "mapreset";
 				$sender->sendMessage("[MapReset] Resting map! Please wait...");
+				$world = $this->owner->getConfig()->get("WorldTpPlayer");
+				$this->resetCommandMap($sender);
 				foreach($this->getServer()->getLevels->getPlayers() as $p){
-					$p->teleport //Ill add the world here, Im check SRC
+					//tleport playeer to "world tp player"
+					$p->sendMessage("[MapReset] The map is resetting. You have been teleported tp $world");
+					return true;
+					break;
 				}
+	}
+	public function resetCommandMap() {
+		$this->plugin->getLogger->info("[MapReset] Resseting map. Please wait.");
 	}
 	public function log($message) {
 		$this->plugin->getLogger ()->info ( $message );
