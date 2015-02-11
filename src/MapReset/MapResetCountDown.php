@@ -10,7 +10,6 @@ use pocketmine\level\Position;
 use pocketmine\scheduler\PluginTask;
 use pocketmine\scheduler\AsyncTask;
 use pocketmine\level\Level;
-use pocketmine\scheduler\PluginTask;
 
 class MapResetCountDown extends PluginTask {
 	
