@@ -29,23 +29,23 @@ public $Command;
         # The world will be cloned
         if(!$map->exists("MapReset")){
             $map->set("MapReset", "World1");
+            $map->save();
         }
         # The world played then deleted
         if(!$map->exists("MapPlaying")){
             $map->set("MapPlaying", "World_1");
+            $map->save();
         }
         # time the world lasted
         if(!$map->exists("TimeReset")){
             $map->set("TimeReset", "120");
+            $map->save();
         }
         # when the world is eliminated players will tp in the next world:
         if(!$map->exists("WoldTpPlayer")){
             $map->set("WoldTpPlayer", "world");
+            $map->save();
         }
-        $map->save();
-        $map->reload();
-
-        $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->getLogger()->info(TextFormat::GREEN . "[MapReset] MapReset version 1.0.0 has been enabled.");
     }
  public function startReset(){
