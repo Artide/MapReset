@@ -9,4 +9,7 @@ TimeReset: 120
 
 #When the world is reseting, Where should players get teleported to?
 WoldTpPlayer: world
+
+#This setting should be left along. Please ignore it.
+startreset: "no"
 ...
