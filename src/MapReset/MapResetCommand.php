@@ -17,7 +17,7 @@ class MapResetCommand {
 		$this->pgin = $pg;
 	}
 	public function onCommand(CommandSender $sender, Command $command, $label, array $args) {
-		switch ($args[0]);
+		switch ($args[0]){
 			case "mapreset";
 				$sender->sendMessage("[MapReset] Resting map! Please wait...");
 				$world = $this->owner->getConfig()->get("WorldTpPlayer");
@@ -28,11 +28,12 @@ class MapResetCommand {
 					return true;
 					break;
 				}
+			}
+		}
+		public function resetCommandMap() {
+			$this->plugin->getLogger->info("[MapReset] Resseting map. Please wait.");
+		}
+		public function log($message) {
+			$this->plugin->getLogger ()->info ( $message );
+		}
 	}
-	public function resetCommandMap() {
-		$this->plugin->getLogger->info("[MapReset] Resseting map. Please wait.");
-	}
-	public function log($message) {
-		$this->plugin->getLogger ()->info ( $message );
-	}
-}
