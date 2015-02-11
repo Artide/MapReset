@@ -17,6 +17,12 @@ class MapResetCommand {
 		$this->pgin = $pg;
 	}
 	public function onCommand(CommandSender $sender, Command $command, $label, array $args) {
+		switch ($args[0]);
+			case "mapreset";
+				$sender->sendMessage("[MapReset] Resting map! Please wait...");
+				foreach($this->getServer()->getLevels->getPlayers() as $p){
+					$p->teleport //Ill add the world here, Im check SRC
+				}
 	}
 	public function log($message) {
 		$this->plugin->getLogger ()->info ( $message );
