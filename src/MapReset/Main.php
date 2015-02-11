@@ -9,7 +9,6 @@ use MapReset\Perms;
 class Main extends PluginBase  implements Listener {
  
 public $Command;
-
  
  public function onLoad() { 
    // $this->getLogger()->info(TextFormat::RED . "Loading MapReset"); They would see this message twice if you use onLoad & onEnable.
@@ -23,6 +22,7 @@ public $Command;
         $time = $this->getConfig->get("TimeReset"); //Grabs time until reset
         $this->getConfig()->set("startreset", "no"); //This is to make sure there wont be a map reset on onEnable
         $this->getServer()->getScheduler()->scheduleRepeatingTask(new MapResetCountDown($this), $time); //sechdules a task for the time.
+        $this->startReset(); //Start reset timer function.
         
         
         # The world will be cloned
