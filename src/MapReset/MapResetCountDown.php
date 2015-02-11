@@ -8,8 +8,6 @@ use pocketmine\Server;
 use pocketmine\utils\Utils;
 use pocketmine\utils\Config;
 use pocketmine\level\Position;
-use pocketmine\scheduler\Task;
-use pocketmine\scheduler\TaskHandler;
 use pocketmine\scheduler\PluginTask;
 use pocketmine\scheduler\AsyncTask;
 use pocketmine\level\Level;
