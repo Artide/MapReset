@@ -49,7 +49,9 @@ public $Command;
         $this->getLogger()->info(TextFormat::GREEN . "[MapReset] MapReset version 1.0.0 has been enabled.");
     }
  public function startReset(){
-  $time = $this->getConfig->get("TimeReset");
+  $map = $this->getConfig();
+  $timer = $map->get("TimeReset");
+  $time = intval($timer * 20); //Fixes things up :D
   $this->getServer()->getScheduler()->scheduleDelayedTask(new CallbackTask([$this, "resetNow"], [$sender]), $time);
  }
  public function resetNow(){
