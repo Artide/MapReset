@@ -20,7 +20,7 @@ public $Command;
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->saveDefaultConfig();
         $map = $this->getConfig();
-        $time = $this->getConfig->get("TimeReset"); //Grabs time until reset
+        $time = $map->get("TimeReset"); //Grabs time until reset
         $this->getConfig()->set("startreset", "no"); //This is to make sure there wont be a map reset on onEnable
         $this->getServer()->getScheduler()->scheduleRepeatingTask(new MapResetCountDown($this), $time); //sechdules a task for the time.
         $this->startReset(); //Start reset timer function.
